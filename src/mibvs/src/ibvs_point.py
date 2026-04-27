@@ -54,14 +54,24 @@ def callBack(image_data, marker_data, info_data):
     Lp = np.zeros((8,6))
     e_feat = np.zeros((8,1))
     # desired normalized u and v arrange as 8 by 1 matrix (u1 v1 u2 v2 u3 v3 u4 v4)
-    des_feat = np.array([[0.1],
-                         [0.1],
-                         [-0.1],
-                         [0.1],
-                         [-0.1],
-                         [0.1],
-                         [-0.1], 
-                         [-0.1]])
+    des_feat = np.array([[0.11405071],
+                         [0.11441344],
+                         [-0.12223703],
+                         [0.11388478],
+                         [0.11406292],
+                         [-0.12031294],
+                         [-0.12215015], 
+                         [-0.12058573]])
+    
+#     C[[0.11405071]
+#  [0.11441344]]
+# [[-0.12223703]
+#  [ 0.11388478]]
+# [[ 0.11406292]
+#  [-0.12031294]]
+# [[-0.12215015]
+#  [-0.12058573]]
+
     id = 1000
     for i in range(0,4):
         try:
@@ -79,7 +89,7 @@ def callBack(image_data, marker_data, info_data):
         xnorm = (xi/zi) 
         ynorm = (yi/zi) 
         norm_cor = np.array([[xnorm],[ynorm]])
-    
+        # print(norm_cor)
         # Norm_Cords_Mat[id-1,:] = np.squeeze(norm_cor, axis=1)
         # print(xnorm, ynorm)
         
@@ -112,7 +122,7 @@ def callBack(image_data, marker_data, info_data):
     ferror.y = e_feat[1,0]
     ferror.z = 0
     
-    print("error vector:", ({e_feat[0,0]},{e_feat[1,0]}))
+    # print("error vector:", ({e_feat[0,0]},{e_feat[1,0]}))
     feature_error_publisher.publish(ferror)
     
     Error_List.append(e_feat)
@@ -139,8 +149,9 @@ def callBack(image_data, marker_data, info_data):
     
     
     
-    lam = 0.5
-    u_f = lam * Lp.transpose() @ e_feat
+    lam = 0.08
+    u_f = lam * np.linalg.pinv(Lp) @ e_feat
+    print(u_f)
     # u_f = -lam * np.linalg.pinv(Lp) @ e_feat
     # compen = Lp[:,3] * ua
     # compen = np.expand_dims(compen, axis=1)
@@ -154,12 +165,17 @@ def callBack(image_data, marker_data, info_data):
     # AdT --> the adjoint transformation from the cam to uav frame.
     
     # print("Relative Pose:",{rel_pose_data})
-    RRR = np.array([[ 0, 0, 1],
-                    [-1,  0, 0],
-                    [ 0,  -1, 0]])
+    # RRR = np.array([[ 0, 0, 1],
+    #                 [-1,  0, 0],
+    #                 [ 0,  -1, 0]])
+    # use rviz visulizatoin of tfs to figure this out.
+    RRR = np.array([[ 1,  0,  0],
+                    [ 0,  0,  1],
+                    [ 0, -1,  0]])
     
-    ttt = np.array([[0],[0],[-0.1]])    
-    AdT = adjoint_matrix(RRR,ttt)
+    # camera_offset_len (this is inside the bebop_base.urdf.xacro)
+    ttt = np.array([[0],[0.1],[0]])    
+    AdT = adjoint_matrix(RRR, ttt)
     
 
     # AdT = np.array([[0, -1,  0,  0,  0,  0],

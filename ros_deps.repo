@@ -15,3 +15,8 @@ repositories:
     type: git
     url: https://github.com/Shayan-Sepahvand/hector_quadrotor.git
     version: noetic-devel
+  src/ar_track_alvar:
+    type: git
+    url: https://github.com/Shayan-Sepahvand/ar_track_alvar.git
+    version: melodic-devel
+    

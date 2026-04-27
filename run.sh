@@ -30,6 +30,31 @@ echo ">> Finalizing dependencies with rosdep..."
 # of all folders in src and installs what's missing.
 cd "$SRC_DIR"
 
+
+# 1. Define paths
+WS_DIR="$HOME/catkin_ws"
+TARGET_SRC="$WS_DIR/src"
+REPO_DIR="$WS_DIR/M-IBVS"
+
+# 2. Ensure the main src directory exists
+mkdir -p "$TARGET_SRC"
+
+echo ">> Moving packages from $REPO_DIR/src to $TARGET_SRC..."
+
+# 3. Move the contents. 
+# We use 'shopt -s dotglob' to make sure hidden files (like .git or .gitignore) move too.
+shopt -s dotglob
+mv "$REPO_DIR/src/"* "$TARGET_SRC/" 2>/dev/null
+
+# 4. Clean up the now-empty src folder inside M-IBVS
+rmdir "$REPO_DIR/src" 2>/dev/null
+
+echo ">> Done! Everything is now in $TARGET_SRC"
+echo ">> Your M-IBVS configuration files (like ros_deps.repo) are still in $REPO_DIR"
+
+# 5. Final check
+ls "$TARGET_SRC"
+
 echo "-------------------------------------------------------"
 echo ">> Done! Everything is now located in: $SRC_DIR"
 echo ">> Run: cd $WS_DIR && catkin build"

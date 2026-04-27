@@ -79,7 +79,7 @@
               -Y 0"
         respawn="false" output="screen"/>
 
-  <!-- loads the disk model into the gazebo environment -->
+  <!-- loads the disk model into the gazebo environment
   <node name="spawn_disk" pkg="gazebo_ros" type="spawn_model"
         args="-file $(find mibvs)/models/disk/model.sdf
               -model disk -sdf
@@ -89,7 +89,7 @@
               -R 0
               -P 0
               -Y 0"
-        respawn="false" output="screen"/>
+        respawn="false" output="screen"/> -->
 
 
 

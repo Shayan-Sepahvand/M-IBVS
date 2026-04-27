@@ -7,7 +7,7 @@ How to install the package, assuming the ros neotics workspace has already been 
 cd ~/catkin_ws
 ./run.sh
 cd ~/catkin_ws
-mv ~/catkin_ws/M-IBVS/* ~/catkin_ws/src/mibvs
+mv ~/catkin_ws/M-IBVS/* ~/catkin_ws/src/mibvs/
 catkin build
 
 ```

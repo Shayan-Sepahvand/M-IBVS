@@ -1,3 +1,6 @@
+cd ~/catkin/M-IBVS
+mv * ..
+rm -rf M-IBVS
 WS_DIR="$(pwd)"
 mkdir -p "$WS_DIR/src"
 

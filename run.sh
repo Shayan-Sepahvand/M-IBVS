@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WS_DIR="~/catkin_ws"
+WS_DIR="$HOME/catkin_ws"
 mkdir -p "$WS_DIR/src"
 
 echo ">> Importing source dependencies..."

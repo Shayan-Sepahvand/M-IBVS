@@ -8,6 +8,7 @@ cd ~/catkin_ws
 ./run.sh
 cd ~/catkin_ws
 mv ~/catkin_ws/M-IBVS/* ~/catkin_ws/src/mibvs/
+rm -rf M-IBVS
 catkin build
 
 ```

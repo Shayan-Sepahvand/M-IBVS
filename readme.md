@@ -4,10 +4,8 @@ How to install the package, assuming the ros neotics workspace has already been 
 
 
 ```bash
-cd ~/catkin_ws/src
-git clone https://github.com/Shayan-Sepahvand/M-IBVS.git
 cd ~/catkin_ws
+./run.sh
 catkin build
-source devel/setup.bash
 ```
 

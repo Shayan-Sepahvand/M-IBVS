@@ -77,7 +77,8 @@
         respawn="false" output="screen"/>
 
 
-  <!-- <arg name="marker_size" default="10" />
+
+  <arg name="marker_size" default="10" />
   <arg name="max_new_marker_error" default="0.08" />
   <arg name="max_track_error" default="0.05" />
   <arg name="cam_image_topic" default="/bebop/image_raw" />
@@ -92,7 +93,7 @@
 
       <remap from="camera_image"  to="$(arg cam_image_topic)" />
       <remap from="camera_info"   to="$(arg cam_info_topic)" />
-  </node> -->
+  </node>
 
   <node pkg="tf" type="static_transform_publisher" name="odom_to_world_transform" args="0 0 0 0 0 0 1 world odom 100" />
   <node pkg="tf" type="static_transform_publisher" name="odom_to_marker1_transform" args="+0.05 1 1.05 0 0 0.7071 0.7071 odom marker1 100" />

@@ -10,3 +10,4 @@ src/hector_quadrotor
 src/bebop_simulator
 src/parrot_arsdk
 src/TD-ACM-RViz
+src/ar_track_alvar

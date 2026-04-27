@@ -18,5 +18,5 @@ repositories:
   src/ar_track_alvar:
     type: git
     url: https://github.com/Shayan-Sepahvand/ar_track_alvar.git
-    version: melodic-devel
+    version: noetic-devel
     

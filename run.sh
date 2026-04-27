@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WS_DIR="$HOME/catkin_ws"
-mkdir -p "$WS_DIR/src"
+cd "$WS_DIR/src"
 
 echo ">> Importing source dependencies..."
 vcs import src < ros_deps.repo

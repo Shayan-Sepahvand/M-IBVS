@@ -13,3 +13,8 @@ catkin build
 
 ```
 
+## Launching the bebop drone in Gazebo Environment:
+
+```bash
+roslaunch mibvs spawn_gazebo.launch
+```

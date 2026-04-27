@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="marker1">
+    <link name="marker1">
+      <gravity>0</gravity>
+      <collision name="collision_marker1">
+        <pose>0 0 0 0 0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_marker1">
+        <pose>0 0 0.0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://ar_helipad/materials/scripts</uri>
+            <uri>model://ar_helipad/materials/textures</uri>
+            <name>Marker1/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

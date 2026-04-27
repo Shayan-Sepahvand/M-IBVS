@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="mibvs" type="ibvs_point.py" name="run_controller" output="screen"/>
+  <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot" output="screen"/>
+  <node pkg = "mibvs" type = "transform_between_two_frames.py" name = "transform_between_frames" output ="screen"/>
+  
+</launch>  

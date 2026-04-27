@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="wall">
+    <static>true</static>
+    <pose>0 0 0 0 0 1.5708</pose> <!-- Position: (0, 0, 0), Orientation: (roll=0, pitch=0, yaw=90 degrees in radians) -->
+    <link name="wall">
+      <collision name="collision_wall">
+        <geometry>
+          <box>
+            <size>0.001 10 10</size>  <!-- Length, Width, Height of the wall -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_wall">
+        <geometry>
+          <box>
+            <size>0.1 10 10</size>  <!-- Length, Width, Height of the wall -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.2 0.1 1</ambient>  <!-- Brown color (R, G, B, Alpha) -->
+          <diffuse>0.5 0.3 0.2 1</diffuse>  <!-- Slightly lighter brown -->
+          <specular>0.1 0.1 0.1 1</specular> <!-- Subtle shine -->
+          <emissive>0 0 0 1</emissive>       <!-- No emission -->
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

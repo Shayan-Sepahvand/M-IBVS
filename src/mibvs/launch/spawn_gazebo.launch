@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <env name="GAZEBO_MODEL_PATH" value="$(find mibvs)/models:$GAZEBO_MODEL_PATH" />
+
+    <!-- launches the empty world  -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <include file="$(find bebop_gazebo)/launch/spawn_bebop.launch" />
+
+  <node name="spawn_helipad1" pkg="gazebo_ros" type="spawn_model"
+      args="-file $(find mibvs)/models/marker1/model.sdf
+         -model marker1 -sdf
+         -x 0.05
+         -y -0.05
+         -z 1.05
+         -R 1.57
+         -P 0
+         -Y 0"
+      respawn="false" output="screen"/>
+
+
+
+
+  <node name="spawn_helipad2" pkg="gazebo_ros" type="spawn_model"
+      args="-file $(find mibvs)/models/marker2/model.sdf
+         -model marker2 -sdf
+         -x -0.05
+         -y -0.05
+         -z 0.95
+         -R 1.57
+         -P 0
+         -Y 0"
+      respawn="false" output="screen"/> 
+
+  <node name="spawn_helipad3" pkg="gazebo_ros" type="spawn_model"
+      args="-file $(find mibvs)/models/marker3/model.sdf
+         -model marker3 -sdf
+         -x -0.05
+         -y -0.05
+         -z 1.05
+         -R 1.57
+         -P 0
+         -Y 0"
+      respawn="false" output="screen"/> 
+
+  <node name="spawn_helipad4" pkg="gazebo_ros" type="spawn_model"
+      args="-file $(find mibvs)/models/marker4/model.sdf
+         -model marker4 -sdf
+         -x 0.05
+         -y -0.05
+         -z 0.95
+         -R 1.57
+         -P 0
+         -Y 0"
+      respawn="false" output="screen"/> 
+
+
+  <!-- loads the wall model into the gazebo environment -->
+  <node name="spawn_wall" pkg="gazebo_ros" type="spawn_model"
+        args="-file $(find mibvs)/models/wall/model.sdf
+              -model wall -sdf
+              -x -0.05
+              -y 0
+              -z 0
+              -R 0
+              -P 0
+              -Y 0"
+        respawn="false" output="screen"/>
+
+  <!-- loads the disk model into the gazebo environment -->
+  <node name="spawn_disk" pkg="gazebo_ros" type="spawn_model"
+        args="-file $(find mibvs)/models/disk/model.sdf
+              -model disk -sdf
+              -x 2
+              -y 0
+              -z 0
+              -R 0
+              -P 0
+              -Y 0"
+        respawn="false" output="screen"/>
+
+
+
+
+
+
+
+
+
+  <!-- <arg name="marker_size" default="10" />
+  <arg name="max_new_marker_error" default="0.08" />
+  <arg name="max_track_error" default="0.05" />
+  <arg name="cam_image_topic" default="/bebop/image_raw" />
+  <arg name="cam_info_topic" default="/bebop/camera_info" />
+  <arg name="output_frame" default="/camera_optical" />
+
+  <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
+      <param name="marker_size"           type="double" value="$(arg marker_size)" />
+      <param name="max_new_marker_error"  type="double" value="$(arg max_new_marker_error)" />
+      <param name="max_track_error"       type="double" value="$(arg max_track_error)" />
+      <param name="output_frame"          type="string" value="$(arg output_frame)" />
+
+      <remap from="camera_image"  to="$(arg cam_image_topic)" />
+      <remap from="camera_info"   to="$(arg cam_info_topic)" />
+  </node> -->
+
+  <node pkg="tf" type="static_transform_publisher" name="odom_to_world_transform" args="0 0 0 0 0 0 1 world odom 100" />
+
+  <node pkg="tf" type="static_transform_publisher" name="odom_to_marker1_transform" args="+0.05 1 1.05 0 0 0.7071 0.7071 odom marker1 100" />
+  <node pkg="tf" type="static_transform_publisher" name="odom_to_marker2_transform" args="+0.05 1 0.95 0 0 0.7071 0.7071 odom marker2 100" />  
+  <node pkg="tf" type="static_transform_publisher" name="odom_to_marker3_transform" args="-0.05 1 1.05 0 0 0.7071 0.7071 odom marker3 100" /> 
+  <node pkg="tf" type="static_transform_publisher" name="odom_to_marker4_transform" args="-0.05 1 0.95 0 0 0.7071 0.7071 odom marker4 100" /> 
+
+
+
+  <node pkg="rostopic" type="rostopic" name="takeoffbaby" args="pub /action/takeoff/goal hector_uav_msgs/TakeoffActionGoal '{header: { seq: 0, stamp: { secs: 0, nsecs: 0 }, frame_id: '' }, goal_id: {stamp: { secs: 0, nsecs: 0}, id: ''}, goal: {} }'" output="screen"/>
+
+</launch>

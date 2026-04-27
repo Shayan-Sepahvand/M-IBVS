@@ -1,0 +1,12 @@
+build/
+devel/
+logs/
+.catkin_tools/
+dynamics/
+src/CR
+src/hector_gazebo
+src/hector_localization
+src/hector_quadrotor
+src/bebop_simulator
+src/parrot_arsdk
+src/TD-ACM-RViz

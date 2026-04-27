@@ -1,0 +1,17 @@
+repositories:
+  src/bebop_simulator:
+    type: git
+    url: https://github.com/Shayan-Sepahvand/bebop_simulator.git
+    version: master
+  src/hector_localization:
+    type: git
+    url: https://github.com/Shayan-Sepahvand/hector_localization.git
+    version: catkin
+  src/hector_gazebo:
+    type: git
+    url: https://github.com/Shayan-Sepahvand/hector_gazebo.git
+    version: melodic-devel
+  src/hector_quadrotor:
+    type: git
+    url: https://github.com/Shayan-Sepahvand/hector_quadrotor.git
+    version: noetic-devel

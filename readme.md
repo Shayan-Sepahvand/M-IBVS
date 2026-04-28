@@ -1,9 +1,9 @@
-# 🚀AI-Enabled Image-based Visual Servoing Using ROS+Gazebo
+# 🚀 Robust Image-based Visual Servoing of an Aerial Robot Using Self-Organizing Neural Networks
 
 
 ## 📖 Overview
 
-This project implements a computer vision pipeline to detect and track industrial waste containers using YOLOv10. By combining 2D object detection with camera intrinsics and the bin's known physical dimensions, the system accurately estimates the full 3D spatial trajectory of the container.
+The problem of robust image-based visual servoing of an aerial robot for tracking a moving vehicle is addressed in this brief. First, a camera perspective projection model is used with a coordinate frame attached to the quadrotor with a fixed relative pose with respect to it. Extensive ROS Gazebo simulations and real-world experiments are conducted to assess the effectiveness of this method
 
 
 ## ⚙️ Requirements

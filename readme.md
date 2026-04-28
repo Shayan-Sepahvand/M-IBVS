@@ -32,6 +32,8 @@ source ./devel/setup.bash
 
 ## How to Run
 
+This only runs the point-based IBVS without SONN.
+
 ```bash
 roslaunch mibvs spawn_gazebo.launch
 roslaunch mibvs startup.launch

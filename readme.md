@@ -29,11 +29,9 @@ This project implements a computer vision pipeline to detect and track industria
 | Python  | 3.8                   |
 | ROS   | Noetic                       |
 
-> **IMPORTANT NOTE:** This package requires an isolated Python environment via `pyenv`. 
+---
+## ⚙️ Installation Guide
 
-If you do not have `pyenv` installed, we recommend the following installation steps:
-
-**1. Install build dependencies and `pyenv`:**
 How to install the package, assuming the ros neotics workspace has already been set-up:
 
 

@@ -3,8 +3,20 @@
 
 ## 📖 Overview
 
-The problem of robust image-based visual servoing of an aerial robot for tracking a moving vehicle is addressed in this brief. First, a camera perspective projection model is used with a coordinate frame attached to the quadrotor with a fixed relative pose with respect to it. Extensive ROS Gazebo simulations and real-world experiments are conducted to assess the effectiveness of this method
+The problem of robust image-based visual servoing of an aerial robot for tracking a moving vehicle is addressed in this brief. First, a camera perspective projection model is used with a coordinate frame attached to the quadrotor with a fixed relative pose with respect to it. Extensive ROS Gazebo simulations and real-world experiments are conducted to assess the effectiveness of this method. This is a repo presenting the following work. Please cite this article in case it is useful for you:
 
+```bash
+@article{sepahvand2024robust,
+  title={Robust image-based visual servoing of an aerial robot using self-organizing neural networks},
+  author={Sepahvand, Shayan and Janabi-Sharifi, Farrokh and Masnavi, Houman and Aghili, Farhad and Amiri, Niloufar},
+  journal={International Journal of Control, Automation and Systems},
+  volume={22},
+  number={12},
+  pages={3762--3776},
+  year={2024},
+  publisher={Springer}
+}
+```
 
 ## ⚙️ Requirements
 

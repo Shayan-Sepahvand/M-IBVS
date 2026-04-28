@@ -14,7 +14,7 @@ This project implements a computer vision pipeline to detect and track industria
 | Python  | 3.8                   |
 | ROS   | Noetic                       |
 
----
+
 ## ⚙️ Installation Guide
 
 How to install the package, assuming the ros neotics workspace has already been set-up:
@@ -35,7 +35,7 @@ source ./devel/setup.bash
 ```bash
 roslaunch mibvs spawn_gazebo.launch
 ```
----
+
 ## Question (1) - Part (a): Model Selection and Motivation
 
 For this task, I selected the YOLOv10 architecture due to its strong balance between detection accuracy and real-time inference performance. A key advantage of YOLOv10 is its post-processing overhead reduction which leads to lower latency—critical for meeting the <100 ms/frame constraint. Initial experiments were conducted using COCO-pretrained weights, which include a rash can class. However, these models did not generalize well to the provided video. Specifically:

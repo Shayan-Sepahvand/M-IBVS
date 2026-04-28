@@ -1,4 +1,6 @@
-# 🚀 Robust Image-based Visual Servoing of an Aerial Robot Using Self-Organizing Neural Networks
+<div align="center">
+
+# SONN-IBVS: Robust Image-based Visual Servoing of a Quadrotor Using Self-Organizing Neural Networks
 
 
 ## 📖 Overview

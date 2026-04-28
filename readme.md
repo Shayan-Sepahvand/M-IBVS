@@ -26,10 +26,8 @@ This project implements a computer vision pipeline to detect and track industria
 | Component       | Version / Details           |
 |-----------------|-----------------------------|
 | OS              | Ubuntu 20.04                |
-| Python (pyenv)  | 3.10.14                     |
-| CUDA Toolkit    | 12.4                        |
-| NVIDIA Driver   | 570+                        |
-| GPU             | NVIDIA RTX 3060 (12GB VRAM) |
+| Python  | 3.8                   |
+| ROS   | Noetic                       |
 
 > **IMPORTANT NOTE:** This package requires an isolated Python environment via `pyenv`. 
 

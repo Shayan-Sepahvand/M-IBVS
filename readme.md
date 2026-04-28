@@ -1,18 +1,4 @@
-## ROS Neotic Package for Moment-Based IBVS
-
-
-
-
 # 🚀AI-Enabled Image-based Visual Servoing Using ROS+Gazebo
-
-
-## Pre-requisits
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8-blue.svg">
-  <img src="https://img.shields.io/badge/Ubuntu-20.04-orange.svg">
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg">
-</p>
 
 ---
 

@@ -1,6 +1,5 @@
 # 🚀AI-Enabled Image-based Visual Servoing Using ROS+Gazebo
 
----
 
 ## 📖 Overview
 

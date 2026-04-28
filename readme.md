@@ -2,6 +2,7 @@
 
 # SONN-IBVS: Robust Image-based Visual Servoing of a Quadrotor Using Self-Organizing Neural Networks
 
+</div>
 
 ## 📖 Overview
 

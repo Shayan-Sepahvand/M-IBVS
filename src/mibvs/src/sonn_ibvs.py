@@ -167,7 +167,7 @@ class BebopIBVS:
         
         # Main translation control
         mu1 = self.skew(ua * np.array([[0],[0],[1]]))
-        u = -(self.gamma - 2*mu1) @ (r - self.gamma @ error) - (self.Kr @ r) - (self.Ki @ e_int)
+        u = -(self.gamma - 2*mu1) @ (r - self.gamma @ error) - (self.Kr @ r) - (self.Ki @ e_int) + nn_output
 
         # 7. Publish Commands
         cmd = Twist()

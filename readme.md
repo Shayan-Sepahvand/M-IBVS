@@ -1,5 +1,41 @@
 ## ROS Neotic Package for Moment-Based IBVS
 
+
+
+
+# 🚀AI-Enabled Image-based Visual Servoing Using ROS+Gazebo
+
+
+## Pre-requisits
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8-blue.svg">
+  <img src="https://img.shields.io/badge/Ubuntu-20.04-orange.svg">
+  <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg">
+</p>
+
+---
+
+## 📖 Overview
+
+This project implements a computer vision pipeline to detect and track industrial waste containers using YOLOv10. By combining 2D object detection with camera intrinsics and the bin's known physical dimensions, the system accurately estimates the full 3D spatial trajectory of the container.
+
+
+## ⚙️ Requirements
+
+| Component       | Version / Details           |
+|-----------------|-----------------------------|
+| OS              | Ubuntu 20.04                |
+| Python (pyenv)  | 3.10.14                     |
+| CUDA Toolkit    | 12.4                        |
+| NVIDIA Driver   | 570+                        |
+| GPU             | NVIDIA RTX 3060 (12GB VRAM) |
+
+> **IMPORTANT NOTE:** This package requires an isolated Python environment via `pyenv`. 
+
+If you do not have `pyenv` installed, we recommend the following installation steps:
+
+**1. Install build dependencies and `pyenv`:**
 How to install the package, assuming the ros neotics workspace has already been set-up:
 
 
@@ -18,68 +54,7 @@ source ./devel/setup.bash
 ```bash
 roslaunch mibvs spawn_gazebo.launch
 ```
-
-
-
-# 🚀AI-Enabled Industrial Bin Detection and Trajectory Construction
-
-
-## Pre-requisits
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
-  <img src="https://img.shields.io/badge/Ubuntu-20.04-orange.svg">
-  <img src="https://img.shields.io/badge/CUDA-12.4-green.svg">
-  <img src="https://img.shields.io/badge/GPU-RTX%203060-76B900.svg">
-  <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg">
-</p>
-
 ---
-
-## 📖 Overview
-
-This project implements a computer vision pipeline to detect and track industrial waste containers using YOLOv10. By combining 2D object detection with camera intrinsics and the bin's known physical dimensions, the system accurately estimates the full 3D spatial trajectory of the container.
-
----
-
-## 📖 Overview
-
-This project implements a computer vision pipeline to detect and track industrial waste containers using YOLOv10. By combining 2D object detection with camera intrinsics and the bin's known physical dimensions, the system accurately estimates the full 3D spatial trajectory of the container.
-
----
-
-## ⚙️ Requirements
-
-| Component       | Version / Details           |
-|-----------------|-----------------------------|
-| OS              | Ubuntu 20.04                |
-| Python (pyenv)  | 3.10.14                     |
-| CUDA Toolkit    | 12.4                        |
-| NVIDIA Driver   | 570+                        |
-| GPU             | NVIDIA RTX 3060 (12GB VRAM) |
-
-> **IMPORTANT NOTE:** This package requires an isolated Python environment via `pyenv`. 
-
-If you do not have `pyenv` installed, we recommend the following installation steps:
-
-**1. Install build dependencies and `pyenv`:**
-```bash
-sudo apt update
-sudo apt install -y make build-essential libssl-dev zlib1g-dev \
-libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git
-
-curl [https://pyenv.run](https://pyenv.run) | bash
-
----
-
-## ⚙️ How to run
-
-```bash
- ./run.sh --video input.mp4 --calib calib.json --kalman 
-```
----
-
 ## Question (1) - Part (a): Model Selection and Motivation
 
 For this task, I selected the YOLOv10 architecture due to its strong balance between detection accuracy and real-time inference performance. A key advantage of YOLOv10 is its post-processing overhead reduction which leads to lower latency—critical for meeting the <100 ms/frame constraint. Initial experiments were conducted using COCO-pretrained weights, which include a rash can class. However, these models did not generalize well to the provided video. Specifically:

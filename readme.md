@@ -34,6 +34,7 @@ source ./devel/setup.bash
 
 ```bash
 roslaunch mibvs spawn_gazebo.launch
+roslaunch mibvs startup.launch
 ```
 
 ## Question (1) - Part (a): Model Selection and Motivation

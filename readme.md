@@ -17,13 +17,15 @@
 The project layout can be described as follows:
 
 ```
-    ├── MIBVS              # All Jupyter Notebook Files
-    |
-    ├── Dataset                 # Contains the images collected and the lables
-    |   ├── imgs                # 999 RGB images collected
-    |   ├── lables              # The joint variable
-    |
-    ├── Results                 # Result Directory
+
+├── src/
+│   └── mibvs/
+│       ├── visualization/       # Contains output2.gif and plotting scripts
+│       └── ...                  # Other source code files
+├── .gitignore                   # Files to exclude from Git
+├── readme.md                    # Project documentation
+├── ros_deps.repo                # ROS dependencies configuration
+└── run.sh                       # Shell script to execute the project
     
 ```
 

@@ -12,6 +12,21 @@
 </div>
 
 
+## Project Layout 
+
+The project layout can be described as follows:
+
+```
+    ├── MIBVS              # All Jupyter Notebook Files
+    |
+    ├── Dataset                 # Contains the images collected and the lables
+    |   ├── imgs                # 999 RGB images collected
+    |   ├── lables              # The joint variable
+    |
+    ├── Results                 # Result Directory
+    
+```
+
 ## 📖 Overview
 
 The problem of robust image-based visual servoing of an aerial robot for tracking a moving vehicle is addressed in this brief. First, a camera perspective projection model is used with a coordinate frame attached to the quadrotor with a fixed relative pose with respect to it. Extensive ROS Gazebo simulations and real-world experiments are conducted to assess the effectiveness of this method. This is a repo presenting the following work. Please cite this article in case it is useful for you:

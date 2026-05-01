@@ -6,8 +6,10 @@
 
 ## 📖 Demo
 
+<div align="center">
 
 ![Demo Video](./src/mibvs/visualization/output2.gif)
+</div>
 
 
 ## 📖 Overview

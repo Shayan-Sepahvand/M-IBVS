@@ -7,7 +7,8 @@
 ## 📖 Demo
 
 
-![Demo Video](./src/visualization/output2.gif)
+<img src="./src/visualization/output2.gif" width="500" alt="Demo Video">
+
 
 ## 📖 Overview
 

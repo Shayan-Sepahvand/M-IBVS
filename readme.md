@@ -19,9 +19,7 @@ The project layout can be described as follows:
 ```
 
 ├── src/
-│   └── mibvs/
-│       ├── visualization/       # Contains output2.gif and plotting scripts
-│       └── ...                  # Other source code files
+│   └── mibvs/                   # The ROS Noetic Package for SONN-IBVS
 ├── .gitignore                   # Files to exclude from Git
 ├── readme.md                    # Project documentation
 ├── ros_deps.repo                # ROS dependencies configuration

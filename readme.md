@@ -7,7 +7,7 @@
 ## 📖 Demo
 
 
-![Demo Video](./src/visulization/output2.gif)
+![Demo Video](./src/visualization/output2.gif)
 
 ## 📖 Overview
 

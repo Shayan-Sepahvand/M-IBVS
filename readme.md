@@ -7,7 +7,7 @@
 ## 📖 Demo
 
 
-<img src="./src/visualization/output2.gif" width="500" alt="Demo Video">
+![Demo Video](./src/mibvs/visualization/output2.gif)
 
 
 ## 📖 Overview
